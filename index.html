@@ -6,52 +6,78 @@
   <title>Cosmovision Creative</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top left, #3a0ca3, #7209b7, #4361ee, #4cc9f0);
-      color: white;
-      text-align: center;
-      padding: 4rem 1rem;
-      min-height: 100vh;
-      background-attachment: fixed;
-      background-size: cover;
-      animation: sparkle 20s linear infinite;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    @keyframes sparkle {
-      0% { filter: brightness(1); }
-      50% { filter: brightness(1.1); }
-      100% { filter: brightness(1); }
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* Full-screen video */
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.5); /* slight overlay for readability */
     }
 
     img.logo {
       width: 120px;
-      height: auto;
+      border-radius: 12px;
       margin-bottom: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
     }
 
-    h1.headline {
+    h1 {
       font-size: 2rem;
-      font-weight: 600;
-      color: #fff;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 25px rgba(255, 215, 255, 0.3);
-      margin-bottom: 0.75rem;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                   0 0 20px rgba(186, 85, 211, 0.4);
     }
 
-    p.subheadline {
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: #e6e6ff;
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+    p {
+      margin-top: 0.8rem;
+      font-size: 1.1rem;
+      color: #e0e0e0;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
 <body>
-  <img class="logo" src="cosmovision-logo.png" alt="Cosmovision Creative Logo" />
-  <h1 class="headline">A venture studio where sacred visions blossom into soulful enterprises.</h1>
-  <p class="subheadline">Guiding sacred entrepreneurs from vision to launch.</p>
+
+  <!-- Fullscreen Background Video -->
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="background-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay Content -->
+  <div class="content">
+    <img class="logo" src="cosmovision-logo.png" alt="Cosmovision Creative Logo" />
+    <h1>A venture studio where sacred visions blossom into soulful enterprises.</h1>
+    <p>Guiding sacred entrepreneurs from vision to launch.</p>
+  </div>
+
 </body>
 </html>
