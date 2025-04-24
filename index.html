@@ -14,4 +14,27 @@
 
     body, html {
       height: 100%;
-      font-family: 'Poppins',
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -2;
+      object-fit: cover;
+    }
+
+    .fade-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 1s ease
