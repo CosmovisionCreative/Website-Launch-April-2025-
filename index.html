@@ -1,0 +1,92 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin } from "lucide-react";
+
+export default function CosmovisionCreative() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-black via-purple-900 to-indigo-900 text-white p-6">
+      <header className="text-center py-10">
+        <img
+          src="/logo.png"
+          alt="Cosmovision Creative Logo"
+          className="mx-auto w-32 mb-4"
+        />
+        <h1 className="text-4xl font-bold">Cosmovision Creative</h1>
+        <p className="mt-4 text-xl max-w-2xl mx-auto">
+          CVC is a Venture Studio specialized in manifesting visions for sacred
+          enterprises spanning the spectrum of possibility.
+        </p>
+        <Button className="mt-6 text-lg" asChild>
+          <a href="https://tinyurl.com/xxDreamAnchoringxx" target="_blank">
+            Book a Dream Anchor Session
+          </a>
+        </Button>
+      </header>
+
+      <section className="py-12">
+        <h2 className="text-3xl font-semibold text-center mb-8">Our Services</h2>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            {
+              title: "Naming & Branding",
+              desc: "Crafting evocative names and identity systems rooted in soul."},
+            {
+              title: "Design & Multimedia Production",
+              desc: "Visual storytelling through digital, print, and motion media."},
+            {
+              title: "Venture Legal Structuring",
+              desc: "Forming the sacred container for your business to thrive."},
+            {
+              title: "Website & Copy Creation",
+              desc: "Building the digital temples for your presence and voice."},
+            {
+              title: "Manifesting Partnerships",
+              desc: "Aligning your vision with resonant collaborators and allies."},
+            {
+              title: "Launching Products & Services",
+              desc: "Strategic and soulful go-to-market execution."},
+            {
+              title: "Energy Clearing / Spiritual Support",
+              desc: "Tending the unseen layers of your venture's ecosystem."},
+            {
+              title: "Fundraising",
+              desc: "Attracting aligned investment with clarity and magnetism."},
+          ].map((service) => (
+            <Card key={service.title} className="bg-white/10 border border-white/20">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-semibold mb-2">{service.title}</h3>
+                <p>{service.desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-12 text-center">
+        <h2 className="text-3xl font-semibold mb-6">Projects & Testimonials</h2>
+        <p className="max-w-2xl mx-auto">Coming soon – stories from our collaborators.</p>
+      </section>
+
+      <footer className="py-12 border-t border-white/20 text-center">
+        <div className="flex flex-col gap-2 items-center mb-4">
+          <a href="mailto:cosmovisioncreative@gmail.com" className="flex items-center gap-2">
+            <Mail size={18} /> cosmovisioncreative@gmail.com
+          </a>
+          <div className="flex items-center gap-2">
+            <Phone size={18} /> 628-400-3142
+          </div>
+          <div className="flex items-center gap-2">
+            <MapPin size={18} /> 2350 W. Highway 89A #1060, Sedona, AZ 86336
+          </div>
+        </div>
+        <div className="flex justify-center gap-6 mt-4">
+          <a href="https://www.instagram.com/cosmovisioncreative/" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+          <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        </div>
+        <p className="mt-6 text-sm text-white/50">© {new Date().getFullYear()} Cosmovision Creative</p>
+      </footer>
+    </div>
+  );
+}
