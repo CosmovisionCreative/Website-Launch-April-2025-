@@ -16,17 +16,19 @@
       height: 100%;
       font-family: 'Poppins', sans-serif;
       overflow: hidden;
+        background-color: black; /* fallback in case video doesn’t load */
     }
 
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
-      object-fit: cover;
-    }
+   .video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
 
     .overlay {
       position: absolute;
